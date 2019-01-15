@@ -2,6 +2,8 @@
 import brainEven from '../games/game-even';
 import brainCalc from '../games/game-calc';
 import brainGcd from '../games/game-gcd';
+import brainProgression from '../games/game-progression';
+
 import { hi } from '..';
 
 console.log('Welcome to the Brain Games!');
@@ -24,4 +26,9 @@ export const startGameCalc = () => {
 export const startGameGcd = () => {
   console.log('Find the greatest common divisor of given numbers.');
   brainGcd(name, counter);
+};
+
+export const startGameProgr = () => {
+  console.log('What number is missing in the progression?');
+  brainProgression(name, counter);
 };

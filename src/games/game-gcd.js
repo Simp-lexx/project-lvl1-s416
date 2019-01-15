@@ -1,6 +1,6 @@
-import readlineSync from 'readline-sync';
 import { cons, car, cdr } from 'hexlet-pairs';
 import { randInt } from '../bin/brain-games';
+import { endGame, compare } from './c-logic';
 
 const minRandRange = 1;
 const maxRandRange = 100;
@@ -24,7 +24,7 @@ const gcdFind = (pair) => {
 
 const brainGcd = (name, counter) => {
   if (counter === 0) {
-    console.log(`Congratulations, ${name}!`);
+    endGame(name);
     return;
   }
   const a = randInt(minRandRange, maxRandRange);
@@ -33,15 +33,7 @@ const brainGcd = (name, counter) => {
   const myResult = gcdFind(question);
   const strQuestion = `${car(question)} ${cdr(question)}`;
   console.log(`Question: ${strQuestion}`);
-  const youResult = Number(readlineSync.question('Your answer: '));
-  if (youResult === myResult) {
-    console.log('Correct!');
-    const newCounter = counter - 1;
-    brainGcd(name, newCounter);
-  } else {
-    console.log(`'${youResult}' is wrong answer ;(. Correct answer was '${myResult}'.
-Let's try again, ${name}!`);
-  }
+  compare(myResult, name, brainGcd(name, counter));
 };
 
 export default brainGcd;
