@@ -29,11 +29,7 @@ const strOper = (operator) => {
   return sign;
 };
 
-const brainProgression = (name, counter) => {
-  if (counter === 0) {
-    endGame(name);
-    return;
-  }
+const brainProgression = (name) => {
   const a = randInt(minRandRange, maxRandRange);
   const b = randInt(minRandRange, maxRandRange);
   const question = cons(a, b);

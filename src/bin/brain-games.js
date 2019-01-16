@@ -6,28 +6,36 @@ import brainProgression from '../games/game-progression';
 
 import { hi } from '..';
 
-console.log('Welcome to the Brain Games!\n');
+const welcome = 'Welcome to the Brain Games!';
 
-export const name = hi();
+// export const name = hi();
 
 export const randInt = (min, max) => Math.round(Math.random() * (max - min + 1)) + min;
 
 export const startGameEven = () => {
+  console.log(welcome);
   console.log('Answer "yes" if number even otherwise answer "no".\n');
-  brainEven();
+  const name = hi();
+  brainEven(name);
 };
 
 export const startGameCalc = () => {
+  console.log(welcome);
   console.log('What is the result of the expression?\n');
-  brainCalc();
+  const name = hi();
+  brainCalc(name);
 };
 
 export const startGameGcd = () => {
+  console.log(welcome);
   console.log('Find the greatest common divisor of given numbers.\n');
-  brainGcd();
+  const name = hi();
+  brainGcd(name);
 };
 
 export const startGameProgr = () => {
+  console.log(welcome);
   console.log('What number is missing in the progression?\n');
-  brainProgression();
+  const name = hi();
+  brainProgression(name);
 };

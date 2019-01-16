@@ -1,6 +1,6 @@
 import { cons, car, cdr } from 'hexlet-pairs';
 import { randInt } from '../bin/brain-games';
-import { compare } from './c-logic';
+import compare from './c-logic';
 
 const minRandRange = 1;
 const maxRandRange = 100;
@@ -22,13 +22,13 @@ const gcdFind = (pair) => {
   return divider(first, second);
 };
 
-const brainGcd = () => {
+const brainGcd = (name) => {
   const a = randInt(minRandRange, maxRandRange);
   const b = randInt(minRandRange, maxRandRange);
   const question = cons(a, b);
   const myAnswer = gcdFind(question);
   const strQuestion = `${car(question)} ${cdr(question)}`;
-  compare(myAnswer, strQuestion, brainGcd);
+  compare(myAnswer, strQuestion, name, brainGcd);
 };
 
 export default brainGcd;
