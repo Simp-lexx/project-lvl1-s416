@@ -1,20 +1,15 @@
 import { randInt } from '../bin/brain-games';
-import { endGame, compare } from './c-logic';
+import { compare } from './c-logic';
 
 const isEven = num => (num % 2 === 0);
 const minRandRange = 5;
 const maxRandRange = 35;
 
-const brainEven = (name, counter) => {
-  if (counter === 0) {
-    endGame(name);
-    return;
-  }
-
+const brainEven = () => {
   const question = randInt(minRandRange, maxRandRange);
-  console.log(`Question: ${question}`);
+  const strQuestion = String(question);
   const myAnswer = isEven(question) ? 'yes' : 'no';
-  compare(myAnswer, name, brainEven(name, counter));
+  compare(myAnswer, strQuestion, brainEven);
 };
 
 export default brainEven;

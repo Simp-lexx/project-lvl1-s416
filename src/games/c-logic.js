@@ -1,21 +1,27 @@
 import readlineSync from 'readline-sync';
+import { name } from '../bin/brain-games';
 
-export const resumeGame = fn => (name, counter) => {
-  const newCounter = counter - 1;
-  return fn(name, newCounter);
-};
+let counter = 3;
 
-export const endGame = (name) => {
+const resumeGame = fn => fn();
+
+export const endGame = () => {
   console.log(`Congratulations, ${name}!`);
 };
 
-export const compare = (myAnswer, name, func) => {
+export const compare = (myAnswer, question, fn) => {
+  if (counter === 0) {
+    endGame(name);
+    return;
+  }
+  console.log(`Question: ${question}`);
   const youAnswer = readlineSync.question('Your answer: ');
   if (youAnswer === String(myAnswer)) {
-    console.log('Correct!');
-    resumeGame(func);
+    console.log('Correct!\n');
+    counter -= 1;
+    resumeGame(fn);
   } else {
-    console.log(`'${youAnswer}' is wrong answer ;(. Correct answer was '${myAnswer}'.
+    console.log(`\n'${youAnswer}' is wrong answer ;(. Correct answer was '${myAnswer}'.
 Let's try again, ${name}!`);
   }
 };

@@ -1,6 +1,6 @@
 import { cons, car, cdr } from 'hexlet-pairs';
 import { randInt } from '../bin/brain-games';
-import { compare, endGame } from './c-logic';
+import { compare } from './c-logic';
 
 const minRandRange = 5;
 const maxRandRange = 35;
@@ -29,20 +29,15 @@ const strOper = (operator) => {
   return sign;
 };
 
-const brainCalc = (name, counter) => {
-  if (counter === 0) {
-    endGame(name);
-    return;
-  }
+const brainCalc = () => {
   const a = randInt(minRandRange, maxRandRange);
   const b = randInt(minRandRange, maxRandRange);
   const question = cons(a, b);
   const operator = randInt(minOperRange, maxOperRange);
   const signOper = strOper(operator);
-  const myResult = operResult(question, operator);
+  const myAnswer = operResult(question, operator);
   const strQuestion = `${car(question)} ${signOper} ${cdr(question)}`;
-  console.log(`Question: ${strQuestion}`);
-  compare(myResult, name, brainCalc(name, counter));
+  compare(myAnswer, strQuestion, brainCalc);
 };
 
 export default brainCalc;
