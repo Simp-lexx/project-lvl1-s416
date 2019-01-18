@@ -13,3 +13,6 @@ Install and play Brain Calc Game
 
 Install and play Brain Gcd Game
 [![asciicast](https://asciinema.org/a/cQpSAJDe5ttklUxeidhqtSNwW.svg)](https://asciinema.org/a/cQpSAJDe5ttklUxeidhqtSNwW)
+
+Install and play Brain Progression Game
+[![asciicast](https://asciinema.org/a/1xY3KwH1zO0AoGe5aFQyzXIJn.svg)](https://asciinema.org/a/1xY3KwH1zO0AoGe5aFQyzXIJn)
