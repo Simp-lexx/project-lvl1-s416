@@ -1,9 +1,10 @@
 import { cons, car, cdr } from 'hexlet-pairs';
-import { randInt } from '../bin/brain-games';
-import compare from './c-logic';
+import { randInt } from '..';
+import gameEngine from '../game-engine';
 
 const minRandRange = 1;
 const maxRandRange = 100;
+const description = 'Find the greatest common divisor of given numbers.\n';
 
 const gcdFind = (pair) => {
   const first = car(pair);
@@ -22,13 +23,13 @@ const gcdFind = (pair) => {
   return divider(first, second);
 };
 
-const brainGcd = (name) => {
+const brainGcd = () => {
   const a = randInt(minRandRange, maxRandRange);
   const b = randInt(minRandRange, maxRandRange);
-  const question = cons(a, b);
-  const myAnswer = gcdFind(question);
-  const strQuestion = `${car(question)} ${cdr(question)}`;
-  compare(myAnswer, strQuestion, name, brainGcd);
+  const pairQuestion = cons(a, b);
+  const answer = gcdFind(pairQuestion);
+  const question = `${car(pairQuestion)} ${cdr(pairQuestion)}`;
+  return cons(question, answer);
 };
 
-export default brainGcd;
+export default () => gameEngine(description, brainGcd);

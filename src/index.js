@@ -7,3 +7,5 @@ export const hi = () => {
 };
 
 export const randInt = (min, max) => Math.round(Math.random() * (max - min + 1)) + min;
+
+export const welcome = () => console.log('Welcome to the Brain Games!');

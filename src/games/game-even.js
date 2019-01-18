@@ -1,15 +1,16 @@
-import { randInt } from '../bin/brain-games';
-import compare from './c-logic';
+import { cons } from 'hexlet-pairs';
+import { randInt } from '..';
+import gameEngine from '../game-engine';
 
 const isEven = num => (num % 2 === 0);
 const minRandRange = 5;
 const maxRandRange = 35;
+const description = 'Answer "yes" if number even otherwise answer "no"\n';
 
-const brainEven = (name) => {
+const brainEven = () => {
   const question = randInt(minRandRange, maxRandRange);
-  const strQuestion = String(question);
-  const myAnswer = isEven(question) ? 'yes' : 'no';
-  compare(myAnswer, strQuestion, name, brainEven);
+  const answer = isEven(question) ? 'yes' : 'no';
+  return cons(question, answer);
 };
 
-export default brainEven;
+export default () => gameEngine(description, brainEven);
