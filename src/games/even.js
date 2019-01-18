@@ -1,11 +1,11 @@
 import { cons } from 'hexlet-pairs';
-import { randInt } from '..';
-import gameEngine from '../game-engine';
+import randInt from '../utils';
+import gameEngine from '..';
 
 const isEven = num => (num % 2 === 0);
 const minRandRange = 5;
 const maxRandRange = 35;
-const description = 'Answer "yes" if number even otherwise answer "no"\n';
+const description = 'Answer "yes" if number even otherwise answer "no"';
 
 const brainEven = () => {
   const question = randInt(minRandRange, maxRandRange);

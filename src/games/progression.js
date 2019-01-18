@@ -1,6 +1,6 @@
 import { cons } from 'hexlet-pairs';
-import { randInt } from '..';
-import gameEngine from '../game-engine';
+import randInt from '../utils';
+import gameEngine from '..';
 
 const minProgrStart = 1;
 const maxProgrStart = 100;
@@ -10,7 +10,7 @@ const progressionLength = 10;
 const minProgrIndex = 0;
 const maxProgrIndex = 9;
 
-const description = 'What number is missing in the progression?\n';
+const description = 'What number is missing in the progression?';
 
 const brainProgression = () => {
   const hiddenIndex = randInt(minProgrIndex, maxProgrIndex);
