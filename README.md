@@ -16,3 +16,6 @@ Install and play Brain Gcd Game
 
 Install and play Brain Progression Game
 [![asciicast](https://asciinema.org/a/1xY3KwH1zO0AoGe5aFQyzXIJn.svg)](https://asciinema.org/a/1xY3KwH1zO0AoGe5aFQyzXIJn)
+
+Install and play Brain Prime Game
+[![asciicast](https://asciinema.org/a/54gtt5tfzDi5gg3UH37y9z7fR.svg)](https://asciinema.org/a/54gtt5tfzDi5gg3UH37y9z7fR)
