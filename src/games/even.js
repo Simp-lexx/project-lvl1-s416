@@ -10,7 +10,7 @@ const description = 'Answer "yes" if number even otherwise answer "no"';
 const brainEven = () => {
   const question = randInt(minRandRange, maxRandRange);
   const answer = isEven(question) ? 'yes' : 'no';
-  return cons(question, answer);
+  return cons(question, String(answer));
 };
 
 export default () => gameEngine(description, brainEven);

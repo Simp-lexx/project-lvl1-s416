@@ -19,7 +19,7 @@ const gameEngine = (description, generateGameData) => {
     const answer = cdr(gameData);
     console.log(`Question: ${question}`);
     const gamerAnswer = readlineSync.question('Your answer: ');
-    if (gamerAnswer === String(answer)) {
+    if (gamerAnswer === answer) {
       console.log('Correct!');
       startRound(counter - 1);
     } else {

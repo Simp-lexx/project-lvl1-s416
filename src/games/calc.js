@@ -14,17 +14,17 @@ const generateQuestionAnswer = (num1, num2) => {
     case 0: {
       const answer = num1 + num2;
       const question = `${num1} + ${num2}`;
-      return cons(question, answer);
+      return cons(question, String(answer));
     }
     case 1: {
       const answer = num1 - num2;
       const question = `${num1} - ${num2}`;
-      return cons(question, answer);
+      return cons(question, String(answer));
     }
     default: {
       const answer = num1 * num2;
       const question = `${num1} * ${num2}`;
-      return cons(question, answer);
+      return cons(question, String(answer));
     }
   }
 };

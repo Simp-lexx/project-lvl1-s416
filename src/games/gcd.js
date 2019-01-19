@@ -26,7 +26,7 @@ const brainGcd = () => {
   const secondNum = randInt(minRandRange, maxRandRange);
   const answer = gcdFind(firstNum, secondNum);
   const question = `${firstNum} ${secondNum}`;
-  return cons(question, answer);
+  return cons(question, String(answer));
 };
 
 export default () => gameEngine(description, brainGcd);
